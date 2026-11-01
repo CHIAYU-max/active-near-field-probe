@@ -1,0 +1,4 @@
+structure,E_c_V_per_m,relative_to_j0_percent,intensity_contrast_j0_vs_jminus2
+cone,8.2e3,0.1,1e6
+dual_arm,1.85e6,7.9,160
+single_arm,6.42e6,49,4

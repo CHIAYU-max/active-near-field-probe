@@ -1,0 +1,6 @@
+check,change,result
+tip mesh,10 to 6 nm,"E_c < 0.2%; aperture mean -2.5%; dual-arm/tapered ratio 9.09 to 9.01"
+mesh with nanowire,tip 6 nm; nanowire 8 nm,"P_NW and E_c < 0.3%"
+bottom buffer,200 to 300 nm with PML,port reflection artifact removed
+repeat run,same settings,reproducible to about 1%
+graphene absorption P_g,two meshes,"absolute values differ by about 10%; dual-arm/tapered ratio < 2%; only ratios are reported"

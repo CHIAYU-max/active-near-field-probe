@@ -1,0 +1,7 @@
+quantity,modulation_percent
+graphene own absorption P_g (269x),26800
+tip |Et|^2,9
+tip total field (dual arm),1.4
+"P_NW, j=+1, 3 layers",0.33
+"P_NW, j=0, 1 layer",0.17
+"P_NW, j=+1, 1 layer",0.14

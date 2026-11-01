@@ -1,0 +1,11 @@
+parameter,variation,change_percent
+slot width,66 nm,5.0
+slot width,54 nm,-4.4
+pitch,1.04 lambda_spp,3.4
+pitch,0.90 lambda_spp,-3.2
+gap,5.5 nm,-1.0
+gap,4.5 nm,1.6
+graphene disk radius,27 nm,0.4
+graphene layers,3,-0.27
+graphene layers,2,-0.15
+nanowire offset,+/-5 nm,0.1

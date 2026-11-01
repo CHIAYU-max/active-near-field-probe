@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Near-Field Probe | Chia-Yu Lee</title>
+<meta name="description" content="COMSOL design study of a 60-nm-aperture near-field probe with a dual-arm spiral slot, graphene and a CsPbBr3 nanowire target.">
+<style>
+:root{--ink:#1c2430;--muted:#5a6675;--line:#dfe4ea;--blue:#1f4e9c;--tint:#eef3fa;--bg:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 16px 64px}
+h1{font-size:2rem;line-height:1.2;margin:0 0 8px}
+h2{font-size:1.3rem;margin:44px 0 10px;padding-top:12px;border-top:1px solid var(--line)}
+.by{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+img{width:100%;height:auto;display:block;margin:16px 0 4px}
+figcaption{color:var(--muted);font-size:.88rem;margin-bottom:18px}
+figure{margin:0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0}
+.kpi div{background:var(--tint);border-radius:8px;padding:14px 16px}
+.kpi b{display:block;font-size:1.8rem;color:var(--blue);line-height:1.2}
+.kpi span{font-size:.9rem;color:var(--muted)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem;margin:12px 0}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600}
+a{color:var(--blue)}
+.links a{margin-right:16px}
+</style>
+</head>
+<body>
+<main>
+<h1>Active near-field focusing probe with a dual-arm spiral and graphene</h1>
+<p class="by">Chia-Yu Lee, Yu-Cheng Wang, Li-Lun Chung · Chung Yuan Christian University · Poster, Taiwan Vacuum Society Annual Meeting, 2026</p>
+<p class="links"><a href="https://github.com/CHIAYU-max/active-near-field-probe">GitHub repository</a><a href="https://github.com/CHIAYU-max/active-near-field-probe/tree/main/data">Data</a></p>
+
+<p>A 60-nm aperture is far smaller than a 445-nm wavelength, so a plain tapered probe delivers only 0.16 of the incident intensity to its tip. I used 3D COMSOL simulations to find out how much more a spiral slot could deliver through the same aperture, and whether graphene could switch that light electrically. This is a simulation study; no device has been fabricated.</p>
+
+<div class="kpi">
+<div><b>9.1×</b><span>aperture intensity vs. a tapered probe at 445 nm</span></div>
+<div><b>9.7×</b><span>CsPbBr₃ nanowire absorption</span></div>
+<div><b>160×</b><span>center contrast between j = 0 and j = −2 inputs</span></div>
+<div><b>0.14–0.33%</b><span>graphene's effect on nanowire absorption</span></div>
+</div>
+
+<h2>Design</h2>
+<p>A one-turn dual-arm slot in the 50-nm Al film converts a vortex beam (l = −1, σ = +1) into surface plasmons. The pitch equals the plasmon wavelength, 435.2 nm, so the plasmons from both arms add in phase at the tip. A graphene disk covers the aperture, and a CsPbBr₃ nanowire 5 nm above it measures how much light the probe delivers.</p>
+<figure><img src="figures/fig1_structure.png" alt="3D model, cross-section and tip detail of the probe"><figcaption>Figure 1. Probe structure and dimensions.</figcaption></figure>
+
+<h2>The dual-arm probe focuses 9× more light</h2>
+<p>The dual-arm probe reaches 1.48 times the incident intensity at the aperture, against 0.163 for the tapered probe and 0.518 for a single arm. Its center field is 99.7% longitudinal, while the single arm shifts the hot spot to one side and mixes in 32% transverse field.</p>
+<figure><img src="figures/fig3_fieldmaps.png" alt="Field intensity maps for tapered, single-arm and dual-arm probes"><figcaption>Figure 2. Intensity at 445 nm with no nanowire, j = 0. Top: xz cross-section. Bottom: 2 nm above the aperture.</figcaption></figure>
+<div class="scroll"><table>
+<tr><th>Structure</th><th>Center field (V/m)</th><th>Aperture intensity / incident</th><th>Center |E<sub>t</sub>|/E<sub>c</sub></th><th>Gain</th></tr>
+<tr><td>Tapered</td><td>8.34×10⁶</td><td>0.163</td><td>0.13%</td><td>1×</td></tr>
+<tr><td>Single-arm</td><td>1.31×10⁷</td><td>0.518</td><td>32%</td><td>3.2×</td></tr>
+<tr><td><b>Dual-arm</b></td><td>2.34×10⁷</td><td>1.48</td><td>0.30%</td><td><b>9.1×</b></td></tr>
+</table></div>
+<p>The gain is broadband. The band-averaged ratio over 400–500 nm is 10.6×, and the ratio per wavelength runs from 5.6× to 36×. The largest values come from dips in the tapered probe, so the band average is the fairer number.</p>
+<figure><img src="figures/fig4_spectrum.png" alt="Aperture intensity spectra and gain from 400 to 500 nm"><figcaption>Figure 3. Aperture-averaged intensity and dual-arm gain, 400–500 nm.</figcaption></figure>
+
+<h2>Symmetry explains the focus</h2>
+<p>A C₂ structure can change the total angular momentum j = l + σ only by ±2, and only j = 0 has an on-axis E<sub>z</sub>. The simulated center intensity falls from 1.14 at j = 0 to 0.007 at j = −2, a contrast of about 160×, as this rule predicts.</p>
+<figure><img src="figures/fig5_selection_rule.png" alt="Selection rule diagram and field maps for j = 0 and j = -2"><figcaption>Figure 4. Angular-momentum selection rule in the dual-arm probe.</figcaption></figure>
+
+<h2>More light reaches the nanowire</h2>
+<p>With a nanowire 5 nm above the aperture, absorption rises from 0.135 to 1.31 mW for 1 W of input. Tested geometry changes stayed within ±5%. Pitch was tested at 0.90 and 1.04 λ<sub>spp</sub> and the graphene radius only at 27 nm.</p>
+<figure><img src="figures/fig7_nanowire_fieldmaps.png" alt="Field maps around the nanowire for tapered and dual-arm probes"><figcaption>Figure 5. Field around the nanowire on one color scale.</figcaption></figure>
+<figure><img src="figures/fig8_tolerance.png" alt="Tolerance chart of nanowire absorption"><figcaption>Figure 6. Change in nanowire absorption for each tested variation.</figcaption></figure>
+
+<h2>Graphene switches itself, not the probe</h2>
+<p>Above E<sub>f</sub> = ħω/2 = 1.393 eV, Pauli blocking turns off graphene's interband absorption, which falls by 269× (24 dB). A separate Kubo calculation gives 272×. Yet nanowire absorption changes by only 0.14–0.33%. A monolayer absorbs at most πα ≈ 2.3% and responds only to the in-plane field, and the tip field is mostly E<sub>z</sub>. This simple design is therefore not a useful modulator; a resonant or gap-plasmon structure would be needed to amplify the effect.</p>
+<figure><img src="figures/fig6_graphene.png" alt="Graphene absorption versus Fermi level and comparison of modulation depths"><figcaption>Figure 7. (a) Simulated graphene absorption against the Kubo model. (b) Modulation of each quantity.</figcaption></figure>
+
+<h2>Method and checks</h2>
+<p>COMSOL Multiphysics 6.1 frequency-domain solver, full 3D model, about 2.2 million degrees of freedom, direct solver, about 20 minutes per run. Al uses an impedance boundary condition, graphene a Kubo surface conductivity, and PML layers surround the domain.</p>
+<figure><img src="figures/fig2_mesh.png" alt="Computational domain and mesh"><figcaption>Figure 8. Computational domain and mesh.</figcaption></figure>
+<div class="scroll"><table>
+<tr><th>Check</th><th>Result</th></tr>
+<tr><td>Tip mesh 10 → 6 nm</td><td>center field &lt; 0.2%, aperture average −2.5%, dual-arm/tapered ratio 9.09 → 9.01</td></tr>
+<tr><td>Mesh with nanowire</td><td>absorption and center field &lt; 0.3%</td></tr>
+<tr><td>Repeat run</td><td>about 1%</td></tr>
+<tr><td>Graphene absorption on two meshes</td><td>absolute values differ by about 10%, ratio &lt; 2%, so only ratios are reported</td></tr>
+<tr><td>Kubo calculation</td><td>272×, against 269× simulated</td></tr>
+<tr><td>Incident peak field, analytic</td><td>2.19×10⁷ V/m, matching the model</td></tr>
+</table></div>
+
+<h2>Limitations</h2>
+<ul>
+<li>The Al tip has sharp edges in the model, and CsPbBr₃ birefringence is not included.</li>
+<li>E<sub>f</sub> = 1.7 eV is a very high doping level and would need ionic-liquid gating or similar.</li>
+<li>No experiment has tested these numbers.</li>
+</ul>
+
+<h2>Credits</h2>
+<p>Research led by Chia-Yu Lee, with co-authors Yu-Cheng Wang and Li-Lun Chung. The project began under Prof. Pi-Ju Cheng. Claude (Anthropic) helped write the poster text and organize this page and repository. References and data are in the <a href="https://github.com/CHIAYU-max/active-near-field-probe">repository</a>.</p>
+</main>
+</body>
+</html>

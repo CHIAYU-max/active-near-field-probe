@@ -1,0 +1,5 @@
+structure,j,P_NW_W,gap_center_E_V_per_m,gain_vs_cone_j0
+cone,0,1.35e-4,1.80e7,1.0
+dual_arm,0,1.31e-3,5.27e7,9.7
+cone,+1,4.74e-4,3.08e7,3.5
+dual_arm,+1,1.67e-3,3.36e7,12.4

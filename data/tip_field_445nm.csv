@@ -1,0 +1,4 @@
+structure,E_c_V_per_m,aperture_mean_intensity,center_Et_over_Ec_percent,aperture_gain_vs_cone
+cone,8.34e6,0.163,0.13,1.0
+single_arm,1.31e7,0.518,32,3.2
+dual_arm,2.34e7,1.48,0.30,9.1

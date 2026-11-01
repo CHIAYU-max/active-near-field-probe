@@ -1,0 +1,16 @@
+item,symbol,value,unit,note
+cone height,h_cone,1160,nm,
+cone half-angle,alpha,35.26,deg,
+aperture radius,r_pun,30,nm,60 nm diameter
+Al film thickness,t_Al,50,nm,modeled with an impedance boundary condition
+slot width,w_slit,60,nm,
+spiral pitch,pitch,435.2,nm,equal to the SPP wavelength
+spiral turns,N_turn,1,,dual arm; single-arm and slot-free cone are the controls
+graphene disk radius,r_g,30,nm,monolayer
+graphene Fermi level OFF,E_f,0.2,eV,interband absorption on
+graphene Fermi level ON,E_f,1.7,eV,Pauli blocked
+nanowire diameter,d,50,nm,CsPbBr3
+nanowire length,L,500,nm,CsPbBr3
+nanowire gap,gap,5,nm,
+wavelength,lambda_0,445,nm,spectra 400-500 nm
+beam waist,w,500,nm,vortex beam l=-1 sigma=+1

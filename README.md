@@ -11,6 +11,8 @@ Presented as a poster at the 2026 Annual Meeting of the Taiwan Vacuum Society:
 C.-Y. Lee, Y.-C. Wang, L.-L. Chung, "Design and Numerical Analysis of an Active Near-Field Focusing Probe
 Integrating a Dual-Arm Spiral Metastructure and Graphene."
 
+![Probe structure and dimensions](figures/fig1_structure.png)
+
 ## Results
 
 All values are at 445 nm with 1 W input, compared with a slot-free tapered probe of the same geometry, unless noted.
@@ -25,16 +27,18 @@ All values are at 445 nm with 1 W input, compared with a slot-free tapered probe
 | Graphene's own absorption, Ef = 0.2 → 1.7 eV | 269× (24 dB); Kubo model gives 272× |
 | Graphene's effect on nanowire absorption | 0.14–0.33% |
 
+![Near-field intensity of the three probes](figures/fig3_fieldmaps.png)
+
 - C₂ symmetry can change the total angular momentum j = l + σ only by ±2, and only j = 0 has an on-axis Ez. The
   dual-arm probe keeps this selection rule and adds the 9× gain. The single-arm probe gains less and loses it.
-- The graphene result is a limit, not a working modulator. Pauli blocking switches graphene's own absorption
-  strongly, but a monolayer absorbs at most πα ≈ 2.3% and interacts only with the in-plane field, while the tip
-  field is mostly Ez. Resonant or gap-plasmon structures would be needed to amplify the modulation.
 - Nanowire absorption stayed within ±5% for the tested geometry changes. The range is not symmetric for every
   parameter: pitch was tested at 0.90 and 1.04 λspp, and the graphene radius only at 27 nm
   (`data/tolerance_P_NW.csv`).
+- The graphene result is a limit, not a working modulator. Pauli blocking switches graphene's own absorption
+  strongly, but a monolayer absorbs at most πα ≈ 2.3% and interacts only with the in-plane field, while the tip
+  field is mostly Ez. Resonant or gap-plasmon structures would be needed to amplify the modulation.
 
-![Near-field intensity of the three probes](figures/fig3_fieldmaps.png)
+![Graphene absorption against the Kubo model, and modulation of each quantity](figures/fig6_graphene.png)
 
 ## Method
 
